@@ -24,17 +24,19 @@ spec:
       containers:
       - name: mysql
         image: lakshman045/mysql:v1
-# ---
-# kind: Service
-# apiVersion: v1
-# metadata:
-#   name: nginx
-# spec:
-#   selector:
-#    tier: frontend
-#    app: nginx
-#   ports:
-#   - name: nginx-svc-port
-#     protocol: TCP
-#     port: 80
-#     targetPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mysql
+  namespace: expense
+spec:
+  selector:
+    app: mysql
+    tier: db
+    project: expense
+  ports:
+  - name: mysql-port
+    protocol: TCP
+    port: 3306
+    targetPort: 3306

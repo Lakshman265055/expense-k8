@@ -127,8 +127,8 @@ spec:
             memory: 128Mi
         volumeMounts:
          - name: nginx-conf
-           mountpath: /etc/nginx/nginx.conf
-           subpath: nginx.conf
+           mountPath: /etc/nginx/nginx.conf
+           subPath: nginx.conf
            readOnly: true
       volumes:
       - name: nginx-conf
